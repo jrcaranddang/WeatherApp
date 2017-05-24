@@ -1,0 +1,1 @@
+mongod --dbpath C:\Users\JR\Desktop\Projects\WeatherWatcherApp\WeatherApp\WeatherApp-backend\data --logpath C:\Users\JR\Desktop\Projects\WeatherWatcherApp\WeatherApp\WeatherApp-backend\log\monogo.log --logappend --rest --install

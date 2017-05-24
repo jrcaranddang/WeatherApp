@@ -34,5 +34,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "City": {
+    "dataSource": "monogo",
+    "public": true
+  },
+  "WWUsers": {
+    "dataSource": "monogo",
+    "public": true
   }
 }

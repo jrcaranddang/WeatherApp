@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
-import { LobbyPage } from '../lobby-page/lobby-page';
+import { LoginPage } from '../login-page/login-page';
 import { WWUserRest } from '../../providers/ww-user-rest';
 
 @IonicPage()
@@ -43,9 +43,29 @@ export class RegisterPage {
       console.log(res);
       window.localStorage.setItem('token', res.id);
       window.localStorage.setItem('userId', res.userId);
-      this.navCtrl.setRoot(LobbyPage);
+      this.navCtrl.setRoot(LoginPage);
+
+        // if (res.status === 200) {
+        //   this.wwUserRest.login(this.user)
+        //   .map(res => res.json())
+        //   .subscribe(res => {
+        //     console.log(res);
+        //       if (res.statusCode === 422) {
+        //         window.localStorage.setItem('token', res.id);
+        //         window.localStorage.setItem('userId', res.userId);
+        //         this.navCtrl.setRoot(LobbyPage);
+        //       }
+        //   }, err => {
+        //     console.log(err);
+        //       if (err.status === 422) {
+        //         alert("Error Code 422: Unprocessable Entity")
+        //       }
+        //   });
+        // }
+        // else if (res.status === 422) {
+        
         if (res.status === 422) {
-          console.log(res)
+          // console.log(res)
           alert("Email is already taken")
         }
     }, err => {
