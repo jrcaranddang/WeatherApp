@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>AccountSettingsPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-col>
+    <ion-card-content>
+      <form #settingsForm="ngForm" (ngSubmit)="editForm(settingsForm)">
+        <ion-item>
+          <ion-label floating>Email
+              <span style="float: right; font-size: 12px;">(required)</span>
+            </ion-label>
+          <ion-input [(ngModel)]="user.email" name="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>First Name</ion-label>
+          <ion-input [(ngModel)]="user.firstName" name="firstName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Last Name</ion-label>
+          <ion-input [(ngModel)]="user.lastName" name="lastName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Organization</ion-label>
+          <ion-input [(ngModel)]="user.organization" name="organization"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password
+              <span style="float: right; font-size: 12px;">(required)</span>
+          </ion-label>
+          <ion-input [(ngModel)]="user.password" name="password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>New Password</ion-label>
+          <ion-input [(ngModel)]="user.newPassword" name="newPassword" (input)="analyze(user.newPassword)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Repeat New Password</ion-label>
+          <ion-input [(ngModel)]="user.repeatNewPassword" name="repeatNewPassword"></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button type="submit" block>Edit</button>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-col>`
+</ion-content>
