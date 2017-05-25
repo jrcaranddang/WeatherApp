@@ -1,0 +1,17 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-searchbar #search (change)="searchLocation(search.value)" (ionClear)="onClear(search.value)" placeholder="location/city name" autocomplete="on">
+      </ion-searchbar>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-list *ngIf="results">
+        <ion-item *ngFor="let result of results" (click)=displayWeather(result)>
+          <p>{{ result.name }}</p>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

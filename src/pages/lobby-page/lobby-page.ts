@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController, ToastController } from 'ionic-angular';
+import { SearchWeatherComponent } from '../../components/search-weather/search-weather';
 
 @IonicPage()
 @Component({
@@ -39,14 +40,16 @@ export class LobbyPage {
   degrees(deg) {
     console.log("degrees changed")
     console.log(deg)
+    deg.checked ? this.low = this.lowF : this.low = this.highC;
+    deg.checked ? this.low = this.high : this.highC = this.highC;
     
-    if (deg.checked === true) {
-      this.low = this.lowF;
-      this.high = this.highF;
-    }
-    else if (deg.checked === false) {
-      this.low = this.lowC;
-      this.high = this.highC;
-    }
+    // if (deg.checked === true) {
+    //   this.low = this.lowF;
+    //   this.high = this.highF;
+    // }
+    // else if (deg.checked === false) {
+    //   this.low = this.lowC;
+    //   this.high = this.highC;
+    // }
   }
 }

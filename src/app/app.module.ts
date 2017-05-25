@@ -13,6 +13,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WWUserRest } from '../providers/ww-user-rest';
 import { CityRest } from '../providers/city-rest';
+import { SearchWeatherComponent } from '../components/search-weather/search-weather';
+import { WeatherServiceProvider } from '../providers/weather-service/weather-service';
+
+import { Geolocation } from '@ionic-native/geolocation';
 
 let injections = [
     MyApp,
@@ -23,7 +27,8 @@ let injections = [
 ];
 
 @NgModule({
-  declarations: [injections],
+  declarations: [injections,
+    SearchWeatherComponent],
   imports: [
     BrowserModule,
     HttpModule,
@@ -36,7 +41,9 @@ let injections = [
     SplashScreen,
     WWUserRest,
     CityRest,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    WeatherServiceProvider,
+    Geolocation
   ]
 })
 export class AppModule {}
