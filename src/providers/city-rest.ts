@@ -4,7 +4,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CityRest {
-  private baseUrl = "http://localhost:3000/api/"
+  // private baseUrl = "http://localhost:3000/api/" //windows local machine
+  private baseUrl = "http://weatherapp-c9-dcarandangssf.c9users.io:8080/api/" //c9 linux/ubuntu
   private path = "Cities/"
 
   constructor(public http: Http) {
